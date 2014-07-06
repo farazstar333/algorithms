@@ -29,4 +29,8 @@ public class Node {
 
     }
 
+    Integer getValue() {
+        return i;
+    }
+
 }
