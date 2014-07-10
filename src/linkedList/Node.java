@@ -7,18 +7,18 @@ package linkedList;
  */
 public class Node {
 
-    int i =10;
-    Node next = null;
+    Object i = 10;
+    public Node next = null;
 
-    public  Node(int i){
-        this.i=i;
+    public Node(Object i) {
+        this.i = i;
     }
 
     public void appendToTail(int j) {
 
         Node end = new Node(j);
         Node runner = this;
-        while(runner.next != null) {
+        while (runner.next != null) {
 
             runner = runner.next;
 
@@ -29,7 +29,7 @@ public class Node {
 
     }
 
-    Integer getValue() {
+    public Object getValue() {
         return i;
     }
 

@@ -19,7 +19,7 @@ public class LinkedList {
         //so we are removing 10 and 15 from list.
 
         // now we will remove these duplicates from linked list. In order to track hash table let use hash table
-        Hashtable<Integer, Integer> table = new Hashtable<Integer, Integer>();
+        Hashtable<Object, Object> table = new Hashtable<Object, Object>();
 
         Node runner;
         runner = head;
