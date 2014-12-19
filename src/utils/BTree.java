@@ -5,33 +5,45 @@ package utils;
  */
 public class BTree {
 
-    public Object value;
+    public int value;
     public BTree left;
     public BTree right;
 
+    /**
+     * This will be head of tree. Rest of tree can be created using setValue
+     * @param value
+     */
+    public BTree(int value) {
 
-    public void preOrder(BTree tree) {
+        this.value= value;
+        left=null;
+        right=null;
+
+    }
+
+
+    public void preOrderTraverse(BTree tree) {
     if (tree == null)  return ;
       visit(tree);
-        preOrder(tree.left);
-        preOrder(tree.right);
+        preOrderTraverse(tree.left);
+        preOrderTraverse(tree.right);
 
     }
 
-    public void inOrder(BTree tree) {
+    public void inOrderTraverse(BTree tree) {
         if (tree == null)  return ;
 
-        inOrder(tree.left);
+        inOrderTraverse(tree.left);
         visit(tree);
-        inOrder(tree.right);
+        inOrderTraverse(tree.right);
 
     }
 
-    public void postOrder(BTree tree) {
+    public void postOrderTraverse(BTree tree) {
         if (tree == null)  return ;
 
-        postOrder(tree.left);
-        postOrder(tree.right);
+        postOrderTraverse(tree.left);
+        postOrderTraverse(tree.right);
         visit(tree);
     }
 
@@ -41,6 +53,29 @@ public class BTree {
         return ;
     }
 
+    // do it in in-order.  This is how it should be. Left most node should be greatest in value
+    public void setValue(int value ){
+
+
+      if( value >= this.value )
+      {
+          if (left == null)
+              left = new BTree(value);
+          else
+              left.setValue(value);
+      }
+        else {
+
+          if(right == null)
+              right = new BTree(value);
+          else
+
+            right.setValue(value);
+      }
+
+
+
+    }
 
 
 }
