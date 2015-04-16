@@ -10,32 +10,6 @@ public class KthElementLinkedList {
 
     public static void main(String args[]) {
 
-        // Let assume that n=30 and k=20
-
-        int counter = 0;
-        int k = 8;
-        Node head = Utils.generateLinkedList(30);
-        Node kRunner = head;
-        Node runner = head;
-        // Assume we don't know size of linked list. This algorithm needs to be oblivious of it.
-        while (runner != null) {
-            runner = runner.next;
-            counter++;
-            if (counter > k) {
-                kRunner = kRunner.next; // set KRunner to head which is head at k
-            }
-
-        }
-
-        // now test it out. As n=30 and k=8, we will print 8 elements starting from 22
-
-        while (kRunner != null) {
-
-            System.out.println("printing > " + kRunner.getValue());
-            kRunner = kRunner.next;
-
-
-        }
 
     }
 

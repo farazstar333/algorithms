@@ -14,20 +14,6 @@ public class Node {
         this.i = i;
     }
 
-    public void appendToTail(int j) {
-
-        Node end = new Node(j);
-        Node runner = this;
-        while (runner.next != null) {
-
-            runner = runner.next;
-
-        }
-        //if we reach at this point, it means reach to tail, now it is time to append Node
-        runner.next = end;
-
-
-    }
 
     public Object getValue() {
         return i;

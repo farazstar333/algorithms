@@ -8,27 +8,42 @@ package sorting;
  */
 public class MergeSort {
 
+    static int depth=0;
+
     public static void main(String args[]) {
 
-        int[] list = {12, 34, 67, 80, 40, 4, 10, 22, 45, 70, 8, 56, 40, 14, 42, 66};
+        int[] list = {34, 12, 67, 80};
 
-        int[] sortedArray = sort(list, 0, list.length);
+        int[] sortedArray = sort(list, 0, list.length - 1, list.length);
 
         System.out.println(sortedArray);
 
     }
 
 
-    private static int[] sort(int[] list, int start, int end) {
+    private static int[] sort(int[] list, int start, int end, int size) {
 
-        int mid = (list.length / 2);
-        if (mid >= 2) {
-            int[] left = sort(list, start, mid);
-            int[] right = sort(list, mid, list.length);
-            // when all sorting is done, start merging.
-            return list = merge(left, right);
-        } else { // it means it is base case where there is is only one element.
-            int[] mergeArray = new int[1]; mergeArray[0]= list[end]; // end =start
+
+        if (size >= 2) {
+            int mid = (size / 2);
+            { //in case mid is even.
+                System.out.println("left side: start= " + start + " mid = " +  mid + " end= " +  end  + " size= " + size);
+
+                int[] left = sort(list, start, mid - 1, size / 2);
+
+                System.out.println("right side: start= " + start + " mid = " +  mid + " end= " +  end  + " size= " + size);
+                int[] right = sort(list, mid, end, size / 2);
+                // when all breaking is done, start merging.
+                return merge(left, right);
+            }
+        }
+
+        else { // it means it is base case where there is is only one element.
+            int[] mergeArray = new int[1];
+            if(end == start)  // end =start
+            mergeArray[0] = list[start];
+            else
+            System.out.println("error condition");
             return mergeArray;
         }
 
@@ -44,14 +59,15 @@ public class MergeSort {
 
         //now compare elements of left and right array and move them in deltaArray
         for (int mergeIndex = 0; mergeIndex < mergeArray.length; mergeIndex++) {
-            if (left[leftIndex] <= right[rightIndex] && leftIndex < left.length) {
-                mergeArray[mergeIndex] = left[leftIndex];
-                leftIndex++;
-            } else if (rightIndex < right.length) {
-                mergeArray[mergeIndex] = right[rightIndex];
-                rightIndex++;
-            }
 
+            if (rightIndex >= right.length) // it means right side is empty and just use left array
+                mergeArray[mergeIndex] = left[leftIndex++];
+            else if (leftIndex >= left.length)
+                mergeArray[mergeIndex] = right[rightIndex++];
+            else if (left[leftIndex] <= right[rightIndex])
+                mergeArray[mergeIndex] = left[leftIndex++];
+            else
+                mergeArray[mergeIndex] = right[rightIndex++];
         }
 
         return mergeArray;
