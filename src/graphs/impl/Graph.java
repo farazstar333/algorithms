@@ -155,7 +155,7 @@ public class Graph<V extends Comparable<V>> {
     }
 
     /**
-     * Trick is to use a stack and keep track of visisted nodes
+     * Trick is to use a queue and keep track of visisted nodes
      */
     public void bfs(Vertex startNode) {
 

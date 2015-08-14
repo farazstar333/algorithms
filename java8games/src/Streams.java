@@ -1,3 +1,4 @@
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import static java.util.stream.Collectors.toList;
@@ -18,6 +19,9 @@ public class Streams {
         menuList.add(new Dish("Chiken-Briyani", false));
 
         List<Dish> vegetableDish = menuList.stream().filter(Dish::isVegeterian).collect(toList());
+
+        InputStream io = null;
+
 
         System.out.println(vegetableDish);
     }

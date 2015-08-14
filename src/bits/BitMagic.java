@@ -21,6 +21,7 @@ public class BitMagic {
            return ( (num & 1<<i) != 0);
 
 
+
     }
         // we are turning on bit at ith position.
     public int setBit(int num, int i){
@@ -41,5 +42,9 @@ public class BitMagic {
         // we will start with number 00000001. shift it ith time and then negate it using xor
             return (num & (1<<i ^ 0) );
     }
+
+    // explains what following code does. 11000010 if we subtract 1 from last position it will result in 0 or 1 depending upon if it is 0 and 1
+    // it will be 0 if there is 1 at last position and 1 if there is 0 (it will take carry). in case 0
+    // now if we AND it with same number n&n , it will return 0 or 1
 
 }
