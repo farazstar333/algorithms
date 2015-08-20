@@ -12,11 +12,10 @@ public class MergeSort {
 
     public static void main(String args[]) {
 
-        int[] list = {34, 12, 67, 80, 55, 32, 10, 5, 45, 20, 60, 22};
+        int  input[] = { 5, 7,20, 9, 2, 22, 45, 100, 40, 30, 78, 12, 100, 14, 62 };
+        mergeSort(input);
 
-        mergeSort(list);
-
-        System.out.println(list);
+        System.out.println(input);
 
     }
 
