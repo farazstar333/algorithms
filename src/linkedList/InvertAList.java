@@ -16,7 +16,7 @@ public class InvertAList {
         linkedList.insert(30);
         linkedList.insert(40);
         linkedList.insert(50);
-        linkedList.print();
+        //linkedList.print();
         // now invert the list
         SNode newHead = InvertAList.invertLinkList(linkedList.head);
         linkedList.head = newHead;

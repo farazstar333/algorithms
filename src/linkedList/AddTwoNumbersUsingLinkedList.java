@@ -15,6 +15,10 @@ public class AddTwoNumbersUsingLinkedList {
     num1.reverse();
     num2.reverse();
 
+
+
+
+
      SNode cursor1 = num1.head;
      SNode cursor2 = num2.head;
      int carry=0;
