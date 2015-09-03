@@ -112,6 +112,8 @@ public class LevelOrderWithNewLineTraversal {
         tree.addNode(tree.root, 4 );
         tree.addNode(tree.root, 3 );
         tree.addNode(tree.root, 2 );
+        tree.addNode(tree.root, 8 );
+        tree.addNode(tree.root, 6 );
         tree.addNode(tree.root, 12 );
 
         tree.printTree(tree.root);

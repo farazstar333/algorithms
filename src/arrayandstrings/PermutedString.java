@@ -20,7 +20,7 @@ public class PermutedString {
 
         // condition2, do count for each char for one string. Now using that hash table look
         // other way i
-
+        //or we can just sort arrays and check the count
         // other way is to sort both arrays and then compare sorted strings.
 
         return true;
